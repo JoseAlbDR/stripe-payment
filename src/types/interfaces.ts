@@ -15,3 +15,15 @@ export interface IDecodedToken {
   iat: number;
   exp: number;
 }
+
+export interface ICustomShoopBody extends Request {
+  body: {
+    purchase: {
+      id: number;
+      name: string;
+      price: number;
+    };
+    total_amount: number;
+    shipping_fee: number;
+  };
+}

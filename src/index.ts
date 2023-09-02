@@ -2,6 +2,7 @@ import express from "express";
 import notFoundMiddleware from "./middleware/not-found";
 import errorHandlerMiddleware from "./middleware/error-handler";
 import dbConnect from "./db/connect";
+import stripeController from "./controllers/stripeController";
 
 const app = express();
 
@@ -12,7 +13,7 @@ app.use(express.static("./src/public"));
 app.get("/", (_req, res) => {
   res.send("Hello there!");
 });
-
+app.post("/stripe", stripeController);
 app.use(notFoundMiddleware);
 app.use(errorHandlerMiddleware);
 
