@@ -18,6 +18,7 @@ declare global {
       PORT: string;
       DATABASE_URL: string;
       JWT_SECRET: string;
+      STRIPE_API_KEY: string;
     }
   }
 }
